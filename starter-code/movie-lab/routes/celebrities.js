@@ -50,9 +50,11 @@ router.get("/celebrities/:id/delete", (req, res, next) => {
 
 router.get("/celebrities/:id/edit", (req, res, next) => {
     const id = req.params.id;
-    Celebrity.findById(id).then((celebrity) => {
-        res.render("celebrities/edit", { celebrity });
-    });
+    Celebrity.findById(id)
+        .then((celebrity) => {
+            res.render("celebrities/edit", { celebrity });
+        })
+        .catch((err) => next(err));
 });
 
 router.post("/celebrities/:id", (req, res, next) => {

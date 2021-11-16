@@ -1,0 +1,26 @@
+<a href="/movies">Back to movies list</a>
+
+{{#with movie}}
+    <h1>{{title}}'s details</h1>
+
+    <h2>Made by {{ director }} in {{ year }}</h2>
+
+    <h4>{{rate}}</h4>
+
+    <img src="{{poster}}" alt="Poster {{ name }}">
+
+    <p>{{ plot }}</p>
+
+    <p><strong>Duration:</strong> {{ duration}}</p>
+
+    <p><strong>Genre:</strong> {{genre}}</p>
+
+    <h4>Cast:</h4>
+    {{#each cast}}
+    <p>{{name}}</p>
+    {{/each}}
+
+    <p>
+        <a href="/movies/{{_id}}/edit">Edit this movie</a>
+    </p>
+{{/with}}

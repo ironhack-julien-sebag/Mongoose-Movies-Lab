@@ -20,7 +20,8 @@ require("./config")(app);
 
 // default value for title local
 const projectName = "movie-lab";
-const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
+const capitalized = (string) =>
+    string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 
@@ -30,6 +31,9 @@ app.use("/", index);
 
 const celebrities = require("./routes/celebrities");
 app.use("/", celebrities);
+
+const movies = require("./routes/movies");
+app.use("/", movies);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
