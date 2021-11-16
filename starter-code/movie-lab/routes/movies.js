@@ -45,7 +45,7 @@ router.post("/movies", (req, res, next) => {
         cast,
     })
         .then((createdMovie) => {
-            console.log(createdMovie.cast);
+            // console.log(createdMovie.cast);
             res.redirect(`/movies/${createdMovie._id}`);
         })
         .catch((err) => next(err));
@@ -67,21 +67,42 @@ router.get("/movies/:id/edit", (req, res, next) => {
     Movie.findById(id)
         .populate("cast")
         .then((movie) => {
-            Celebrity.find().then((celebrities) => {
-                let options = "";
-                let selected = "";
-                celebrities.forEach((celebrity) => {
-                    selected = movie.cast
-                        .map((el) => el._id)
-                        .includes(celebrity._id)
-                        ? "selected"
-                        : "";
-                    options += `<option value="${celebrity._id}" ${selected}>${celebrity.name}</option>`;
-                });
-                console.log(options);
+            Celebrity.find()
+                .then((celebrities) => {
+                    let options = "";
+                    celebrities.forEach((celebrity) => {
+                        let castArr = movie.cast.map((e) => e.name);
 
-                res.render("movies/edit", { movie, options });
-            });
+                        castArr.includes(celebrity.name)
+                            ? (options += `<option value="${celebrity.id}" selected>${celebrity.name}</option>`)
+                            : (options += `<option value="${celebrity.id}">${celebrity.name}</option>`);
+                    });
+
+                    console.log(options);
+
+                    res.render("movies/edit", { movie, options });
+                })
+                .catch((err) => next(err));
+        })
+        .catch((err) => next(err));
+});
+
+router.post("/movies/:id/edit", (req, res, next) => {
+    const id = req.params.id;
+
+    const { title, genre, plot, cast } = req.body;
+    Movie.findByIdAndUpdate(
+        id,
+        {
+            title,
+            genre,
+            plot,
+            cast,
+        },
+        { new: true }
+    )
+        .then((updatedMovie) => {
+            res.redirect(`/movies/${updatedMovie._id}`);
         })
         .catch((err) => next(err));
 });
