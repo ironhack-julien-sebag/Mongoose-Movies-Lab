@@ -6,7 +6,7 @@ const Celebrity = require("../models/Celebrity");
 
 router.get("/movies", (req, res, next) => {
     Movie.find().then((moviesFromDb) => {
-        res.render("movies/index", { movies: moviesFromDb });
+        res.render("movies/index", { movies: moviesFromDb, doctitle: "Movies" });
     });
 });
 
@@ -24,7 +24,10 @@ router.get("/movies/:id", (req, res, next) => {
     Movie.findById(id)
         .populate("cast")
         .then((movieFromDb) => {
-            res.render("movies/detail", { movie: movieFromDb });
+            res.render("movies/detail", {
+                movie: movieFromDb,
+                doctitle: movieFromDb.title,
+            });
         })
         .catch((err) => next(err));
 });
@@ -78,9 +81,9 @@ router.get("/movies/:id/edit", (req, res, next) => {
                             : (options += `<option value="${celebrity.id}">${celebrity.name}</option>`);
                     });
 
-                    console.log(options);
+                    console.log(movie);
 
-                    res.render("movies/edit", { movie, options });
+                    res.render("movies/edit", { movie, options, doctitle: `Edit ${movie.title}` });
                 })
                 .catch((err) => next(err));
         })

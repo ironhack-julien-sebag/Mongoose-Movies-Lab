@@ -1,26 +1,55 @@
-<a href="/movies">Back to movies list</a>
+<main class="container container-detail">
+    <a href="/movies">Back to movies list</a>
 
-{{#with movie}}
-    <h1>{{title}}'s details</h1>
+    {{#with movie}}
+    <div class="title-container">
+        <h1>{{title}}'s details</h1>
+        <h3>{{rate}}</h3>
+    </div>
 
     <h2>Made by {{ director }} in {{ year }}</h2>
 
-    <h4>{{rate}}</h4>
+    <div class="movie-content">
+        <img src="{{poster}}" alt="Poster {{ name }}">
 
-    <img src="{{poster}}" alt="Poster {{ name }}">
+        <div class="text">
+            <span>
+                <h4>Plot</h4>
+                <p>{{ plot }}</p>
+            </span>
 
-    <p>{{ plot }}</p>
+            <span>
+                <h4>Duration</h4>
+                <p>{{ duration}}</p>
+            </span>
 
-    <p><strong>Duration:</strong> {{ duration}}</p>
+            <span>
+                <h4>Genre</h4>
+                <p>{{genre}}</p>
+            </span>
+        </div>
+    </div>
 
-    <p><strong>Genre:</strong> {{genre}}</p>
+    <div class="cast-container">
+        <h4>Cast:</h4>
 
-    <h4>Cast:</h4>
-    {{#each cast}}
-    <p>{{name}}</p>
-    {{/each}}
+        <ul class="cast-list">
+            {{#each cast}}
+            <li>
+                <a href="/celebrities/{{_id}}">
+                    <img src="{{picture}}" alt="{{name}}">
+                    <span>
+                        {{ name }}
+                    </span>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
 
-    <p>
-        <a href="/movies/{{_id}}/edit">Edit this movie</a>
-    </p>
-{{/with}}
+    <div class="buttons-container">
+        <a href="/movies/{{_id}}/edit" class="btn">✏️ Edit this movie</a>
+        <a href="/movies/{{_id}}/delete" class="btn">❌ Delete this movie</a>
+    </div>
+    {{/with}}
+</main>

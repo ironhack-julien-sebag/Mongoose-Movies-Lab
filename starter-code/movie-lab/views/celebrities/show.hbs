@@ -1,11 +1,30 @@
-<a href="/celebrities">Back to list</a>
+<main class="container container-detail">
+    <a href="/celebrities">Back to list</a>
 
-{{#with celebrities}}
-<h1>This is {{name}}'s page!</h1>
+    {{#with celebrities}}
+    <h1>This is {{name}}'s page!</h1>
 
-<p>Name: {{name}}</p>
-<p>Occupation: {{toUpperCase occupation}}</p>
-<p>Catchphrase: {{catchPhrase}}</p>
+    <blockquote>{{ catchPhrase }}</blockquote>
 
-<a href="/celebrities/{{_id}}/edit">Edit {{ name }}</a>
-{{/with}}
+    <div class="content">
+        <img src="{{picture}}" alt="Picture {{ name }}">
+
+        <div class="text">
+            <p>
+                <strong>Name: </strong>
+                {{ name }}
+            </p>
+
+            <p>
+                <strong>Occupation: </strong>
+                {{ toUpperCase occupation }}
+            </p>
+        </div>
+    </div>
+    
+    <div class="buttons-container">
+        <a href="/celebrities/{{_id}}/edit" class="btn">✏️ Edit {{ name }}</a>
+        <a href="/celebrities/{{_id}}/delete" class="btn">❌ Delete {{ name }}</a>
+    </div>    
+    {{/with}}
+</main>

@@ -9,64 +9,88 @@ const celebrities = [
         name: "Tom Cruise",
         occupation: "actor",
         catchPhrase: "Hey, I'm 150cm",
+        picture:
+            "https://upload.wikimedia.org/wikipedia/commons/3/33/Tom_Cruise_by_Gage_Skidmore_2.jpg",
     },
     {
         name: "Rone",
         occupation: "musician",
         catchPhrase: "I'm the best artist on Earth",
+        picture:
+            "https://yt3.ggpht.com/2yG30Lu8PhwYHxwFcVdnJ5akow5RWeQZqSPO5-YmWFhoTuJb5qED1G4NrwOOHU9PlDxSmXyFcg=s900-c-k-c0x00ffffff-no-rj",
     },
     {
         name: "Kim Kardashian",
         occupation: "unknown",
         catchPhrase: "I'm the most useless person on Earth",
+        picture:
+            "https://www.visitsealife.com/auckland/media/om0dw4at/king-penguin.jpg",
     },
     {
         name: "Marlon Brando",
         occupation: "actor",
         catchPhrase: "I'm gonna make him an offer he can't refuse",
+        picture:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Marlon_Brando_publicity_for_One-Eyed_Jacks.png/640px-Marlon_Brando_publicity_for_One-Eyed_Jacks.png",
     },
     {
         name: "Al Pacino",
         occupation: "actor",
         catchPhrase: "My father made him an offer he couldn't refuse",
+        picture:
+            "https://upload.wikimedia.org/wikipedia/commons/3/3e/Al_Pacino_2016_%2830401544240%29.jpg",
     },
     {
         name: "James Caan",
         occupation: "actor",
         catchPhrase:
             "What are you gonna do? Nice college boy, didn't want to get mixed up in the family business. Now you want to gun down a police captain. Why? Because he slapped you in the face a little? What do you think this like the Army where you can shoot 'em from a mile away? No you gotta get up like this and, badda-bing, you blow their brains all over your nice Ivy League suit. C'mere.",
+        picture:
+            "https://m.media-amazon.com/images/M/MV5BMTI5NjkyNDQ3NV5BMl5BanBnXkFtZTcwNjY5NTQ0Mw@@._V1_UX178_CR0,0,178,264_AL_.jpg",
     },
     {
         name: "Diane Keaton",
         occupation: "actor",
         catchPhrase: "Charles Boyle loves me",
+        picture:
+            "https://m.media-amazon.com/images/M/MV5BMTY5NDI5OTEyOF5BMl5BanBnXkFtZTgwMzU4NDI1NzM@._V1_UY1200_CR108,0,630,1200_AL_.jpg",
     },
     {
         name: "Christian Bale",
         occupation: "actor",
         catchPhrase: "I'm Batman.",
+        picture:
+            "https://upload.wikimedia.org/wikipedia/commons/c/cc/Christian_Bale-7834.jpg",
     },
     {
         name: "Heath Ledger",
         occupation: "actor",
         catchPhrase: "A-Ta-Ta-Ta-Ta, let's not blow this out of proportion.",
+        picture:
+            "https://image.gala.de/22094924/t/hT/v7/w960/r0.6667/-/heath-ledger.jpg",
     },
     {
         name: "Aaron Eckhart",
         occupation: "actor",
         catchPhrase:
             "You either die a hero or live long enough to see yourself become the villain.",
+        picture:
+            "https://m.media-amazon.com/images/M/MV5BMTc4MTAyNzMzNF5BMl5BanBnXkFtZTcwMzQ5MzQzMg@@._V1_UY264_CR5,0,178,264_AL_.jpg",
     },
     {
         name: "Michael Caine",
         occupation: "actor",
         catchPhrase: "Some men just want to watch the world burn.",
+        picture:
+            "https://upload.wikimedia.org/wikipedia/commons/f/f4/Sir_Michael_Caine%2C_28th_EFA_Awards_2015%2C_Berlin_%28cropped%29.jpg",
     },
     {
         name: "Gary Oldman",
         occupation: "actor",
         catchPhrase:
             "He's the hero Gotham deserves but not the one it needs right now.",
+        picture:
+            "https://m.media-amazon.com/images/M/MV5BMTc3NTM4MzQ5MV5BMl5BanBnXkFtZTcwOTE4MDczNw@@._V1_.jpg",
     },
 ];
 

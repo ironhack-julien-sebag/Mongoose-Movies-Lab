@@ -1,18 +1,21 @@
-<h1>Movies list</h1>
+<main class="container container-list">
+    <div class="title-container">
+        <h1>Movies list</h1>
 
-<ul>
-    {{#each movies}}
-    <li>
-        <form action="/movies/{{_id}}/delete" method="GET">
+        <a href="/movies/new" class="btn">Add a new movie</a>
+    </div>
+
+    <ul class="list-items list-movies">
+        {{#each movies}}
+        <li>
             <a href="/movies/{{_id}}">
-                {{ title }}
+                <img src="{{poster}}" alt="Poster for {{ title }}">
+
+                <span>
+                    {{ title }}
+                </span>
             </a>
-
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-    {{/each}}
-</ul>
-
-
-<p><a href="/movies/new">Add a new movie</a></p>
+        </li>
+        {{/each}}
+    </ul>
+</main>

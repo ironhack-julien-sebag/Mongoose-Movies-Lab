@@ -1,14 +1,31 @@
-<h1>Add a celebrity</h1>
+<main class="container container-form">
+    <a href="/celebrities">Back to celebrities list</a>
 
-<form action="/celebrities" method="POST">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name">
+    <h1>Add a celebrity</h1>
 
-    <label for="occupation">Occupation</label>
-    <input type="text" name="occupation" id="occupation">
+    <form action="/celebrities" method="POST">
+        <div class="item">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
 
-    <label for="catchPhrase">Catch phrase</label>
-    <input type="text" name="catchPhrase" id="catchPhrase">
+        <div class="item">
+            <label for="occupation">Occupation</label>
+            <input type="text" name="occupation" id="occupation">
+        </div>
 
-    <button type="submit">Add new celebrity</button>
-</form>
+        <div class="item">
+            <label for="catchPhrase">Catch phrase</label>
+            <input type="text" name="catchPhrase" id="catchPhrase">
+        </div>
+
+        <div class="item">
+            <label for="picture">Picture</label>
+            <input type="text" name="picture" id="picture">
+        </div>
+
+        <div class="buttons-container">
+            <button type="submit" class="btn">Add new celebrity</button>
+        </div>
+    </form>
+</main>

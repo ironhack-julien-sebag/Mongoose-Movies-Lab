@@ -1,37 +1,58 @@
-<h1>Add a new movie</h1>
+<main class="container container-form">
+    <h1>Add a new movie</h1>
 
-<form action="/movies" method="POST">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title">
+    <form action="/movies" method="POST">
+        <div class="item">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+        </div>
 
-    <label for="year">Year</label>
-    <input type="number" name="year" id="year">
+        <div class="item">
+            <label for="year">Year</label>
+            <input type="number" name="year" id="year">
+        </div>
 
-    <label for="director">Director</label>
-    <input type="text" name="director" id="director">
+        <div class="item">
+            <label for="director">Director</label>
+            <input type="text" name="director" id="director">
+        </div>
 
-    <label for="duration">Duration</label>
-    <input type="text" name="duration" id="duration">
+        <div class="item">
+            <label for="duration">Duration</label>
+            <input type="text" name="duration" id="duration">
+        </div>
 
-    <label for="genre">Genre</label>
-    <input type="text" name="genre" id="genre">
+        <div class="item">
+            <label for="genre">Genre</label>
+            <input type="text" name="genre" id="genre">
+        </div>
 
-    <label for="rate">Rate</label>
-    <input type="number" name="rate" id="rate">
+        <div class="item">
+            <label for="rate">Rate</label>
+            <input type="number" name="rate" id="rate">
+        </div>
 
-    <label for="plot">Plot</label>
-    <textarea name="plot" id="plot"></textarea>
+        <div class="item">
+            <label for="plot">Plot</label>
+            <textarea name="plot" id="plot"></textarea>
+        </div>
 
-    <label for="poster">Poster</label>
-    <input type="text" name="poster" id="poster">
+        <div class="item">
+            <label for="poster">Poster</label>
+            <input type="text" name="poster" id="poster">
+        </div>
 
-    <label for="cast">Cast</label>
+        <div class="item">
+            <label for="cast">Cast</label>
+            <select name="cast" id="cast" multiple>
+                {{#each celebrity}}
+                <option value="{{id}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
 
-    <select name="cast" id="cast" multiple>
-        {{#each celebrity}}
-        <option value="{{id}}">{{name}}</option>
-        {{/each}}
-    </select>
-
-    <button type="submit">Add new movie</button>
-</form>
+        <div class="buttons-container">
+            <button type="submit" class="btn">Add new movie</button>
+        </div>
+    </form>
+</main>

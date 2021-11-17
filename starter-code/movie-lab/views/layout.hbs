@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>{{title}}</title>
-      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <title>{{doctitle}} | Ironhack Movie Lab</title>
+      <link rel="stylesheet" href="/css/style.min.css">
    </head>
 
    <body>
-      <nav>
+      <header>
          <a href="/">Home</a>
-      </nav>
-      {{{body}}}
+
+         <nav>
+            <a href="/movies">Movies</a>
+            <a href="/celebrities">Celebrities</a>
+         </nav>
+      </header>
+
+      <div class="wrapper">
+         {{{body}}}
+      </div>
+      
+      
 
       <script src="/js/script.js"></script>
    </body>
-
 </html>
